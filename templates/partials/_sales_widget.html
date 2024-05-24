@@ -1,0 +1,19 @@
+<div class="row">
+    {% for country, data in sales_data.items() %}
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-header">
+                {{ country }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ data.best_selling_product.name }}</h5>
+                <p class="card-text">
+                    Units Sold: {{ data.units_sold }}<br>
+                    Total Revenue: ${{ data.total_revenue }}<br>
+                    Best Seller: {{ data.best_selling_product.name }} ({{ data.best_selling_product.units_sold }} units)
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

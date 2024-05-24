@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sales Widget
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Sales Data</h2>
+    <button hx-get="/sales-page" hx-target="#sales-widget" hx-trigger="click" class="btn btn-primary">
+        Refresh Sales Data
+    </button>
+
+    <div id="sales-widget" class="mt-3">
+        {% include 'partials/_sales_widget.html'%}
+    </div>
+</div>
+{% endblock %}
